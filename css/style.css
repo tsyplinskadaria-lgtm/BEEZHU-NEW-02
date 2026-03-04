@@ -739,8 +739,8 @@ body {
 .main__blocks h1 {
   font-family: Montserrat,sans-serif;
   font-weight: 600;
-  font-size: 74px;
-  line-height: 84px;
+  font-size: 57px;
+  line-height: 67px;
   color: var(--general-color)
 }
 .main__blocks .descript {
@@ -784,15 +784,28 @@ body {
   font-weight: 500;
   font-size: 16px;
   line-height: 20px;
-  text-align: center;
   color: var(--general-color);
   background-color: var(--orange-color);
   transition: all .1s ease-in-out;
   max-width: 385px;
-  width: 100%
+  width: 100%;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  gap: 10px
 }
 .main .order-btn:hover {
   background-color: var(--orange-color-hover)
+}
+.main .order-btn:hover svg {
+  -webkit-transform: translateX(2px);
+  transform: translateX(2px)
+}
+.main .order-btn svg {
+  width: 18px;
+  height: 18px;
+  transition: all .2s ease-in-out
 }
 .main-benefits__blocks {
   display: grid;
@@ -885,10 +898,16 @@ body {
   gap: 16px;
   box-shadow: 0 1px 2.9px 0 rgba(0,0,0,.1490196078);
   display: flex;
-  align-items: center;
+  align-items: start;
   transition: max-height .4s ease,opacity .4s ease,padding .4s ease;
   padding: 16px;
   width: 100%
+}
+.response-1__item.open .response-1__text {
+  -webkit-line-clamp: unset
+}
+.response-1__item.open .response-1__text::after {
+  display: none
 }
 .response-1__user {
   display: flex;
@@ -977,18 +996,26 @@ body {
   display: flex;
   align-items: center;
   gap: 11px;
-  cursor: pointer
+  cursor: pointer;
+  transition: -webkit-transform .1s ease-in-out;
+  transition: transform .1s ease-in-out;
+  transition: transform .1s ease-in-out,-webkit-transform .1s ease-in-out
 }
 .response-1__more span {
   font-family: Montserrat,sans-serif;
   font-weight: 500;
   font-size: 16px;
-  line-height: 20px
+  line-height: 20px;
+  color: #1b2936
 }
 .response-1__more img {
   transition: -webkit-transform .3s ease;
   transition: transform .3s ease;
   transition: transform .3s ease,-webkit-transform .3s ease
+}
+.response-1__more:hover img {
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg)
 }
 .response-1__more.open img {
   -webkit-transform: rotate(180deg);
@@ -1539,13 +1566,13 @@ body {
   color: #929fa8
 }
 .services {
-  background-color: #f9fafb
+  background-color: #f9fafb;
+  padding: 60px 0
 }
 .services__blocks {
   display: flex;
   flex-direction: column;
-  gap: 24px;
-  padding: 60px 0
+  gap: 24px
 }
 .services__container {
   overflow: hidden
@@ -2808,22 +2835,23 @@ body {
 }
 .resume .team__list {
   display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
-  align-items: center
+  align-items: center;
+  text-align: center
 }
 .season-ticket .swiper-wrapper {
   align-items: center
 }
 .season-ticket .packages {
-  background-color: #ffc700
+  background-color: #ffc700;
+  padding: 60px 0
+}
+.season-ticket .packages__blocks {
+  padding: 0
 }
 .season-ticket .packages__container {
   overflow: hidden
-}
-.season-ticket .packages__blocks {
-  padding: 48px 0
 }
 .season-ticket .packages .swiper {
   overflow: visible
@@ -3614,7 +3642,7 @@ body {
     line-height: 18px;
     font-size: 14px
   }
-  .services__blocks {
+  .services {
     padding: 48px 0
   }
   .services .addition-services h2 {
@@ -3653,6 +3681,9 @@ body {
     border-right: 0
   }
   .team {
+    padding: 48px 0
+  }
+  .season-ticket .packages {
     padding: 48px 0
   }
   .season-ticket .packages .ticket-slide-recommended {

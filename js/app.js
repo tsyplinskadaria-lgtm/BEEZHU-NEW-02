@@ -609,9 +609,9 @@
         }
     }));
     document.addEventListener("DOMContentLoaded", (function() {
-        document.querySelectorAll(".response-1__toggle");
+        const toggleButtons = document.querySelectorAll(".response-1__toggle");
         const items = document.querySelectorAll(".response-1__item");
-        const moreBtn = document.querySelector(".response-1__more");
+        document.querySelector(".response-1__more");
         let isExpanded = false;
         function setClosedText(text) {
             const isMobile = window.innerWidth <= 576;
@@ -623,7 +623,7 @@
             if (!item.classList.contains("open")) setClosedText(text);
         }));
         function hideExtraItems() {
-            const breakpoint = window.innerWidth <= 576 ? 3 : 4;
+            const breakpoint = window.innerWidth;
             const hiddenItems = Array.from(items).slice(breakpoint);
             hiddenItems.forEach((item => {
                 item.style.display = "none";
@@ -631,27 +631,24 @@
             }));
         }
         hideExtraItems();
-        if (moreBtn) moreBtn.addEventListener("click", (function() {
-            const breakpoint = window.innerWidth <= 576 ? 3 : 4;
-            const hiddenItems = Array.from(items).slice(breakpoint);
-            hiddenItems.forEach((item => {
-                if (isExpanded) {
-                    item.style.display = "none";
-                    item.style.pointerEvents = "none";
+        toggleButtons.forEach((btn => {
+            btn.addEventListener("click", (function() {
+                const item = this.closest(".response-1__item");
+                if (!item) return;
+                const text = item.querySelector(".response-1__text");
+                if (!text) return;
+                window.innerWidth;
+                if (item.classList.contains("open")) {
+                    setClosedText(text);
+                    item.classList.remove("open");
+                    this.textContent = "Читати далі";
                 } else {
-                    item.style.display = "flex";
-                    item.style.pointerEvents = "auto";
+                    text.style.maxHeight = text.scrollHeight + "px";
+                    text.style.webkitLineClamp = "unset";
+                    item.classList.add("open");
+                    this.textContent = "Згорнути";
                 }
             }));
-            isExpanded = !isExpanded;
-            const span = moreBtn.querySelector("span");
-            if (isExpanded) {
-                span.textContent = "Сховати відгуки";
-                moreBtn.classList.add("open");
-            } else {
-                span.textContent = "Показати більше відгуків";
-                moreBtn.classList.remove("open");
-            }
         }));
         window.addEventListener("resize", (() => {
             document.querySelectorAll(".response-1__text").forEach((text => {
@@ -966,10 +963,17 @@
             const tabs = block.querySelectorAll(".packages__tab");
             const slides = block.querySelectorAll(".ticket-slide");
             const activeTab = block.querySelector(".packages__tab.active");
-            const activeArea = activeTab ? activeTab.dataset.area : "55";
-            slides.forEach((slide => {
-                slide.style.display = slide.dataset.area === activeArea ? "" : "none";
-            }));
+            let activeArea = activeTab ? activeTab.dataset.area : "60";
+            const filterSlides = area => {
+                slides.forEach((slide => {
+                    slide.style.display = slide.dataset.area === area ? "" : "none";
+                }));
+            };
+            const getRecommendedIndex = area => {
+                const visibleSlides = Array.from(slides).filter((slide => slide.dataset.area === area));
+                return visibleSlides.findIndex((slide => slide.classList.contains("ticket-slide-recommended")));
+            };
+            filterSlides(activeArea);
             const seasonSwiper = new Swiper(swiperEl, {
                 loop: false,
                 speed: 700,
@@ -1004,18 +1008,28 @@
                         slidesPerView: 3,
                         spaceBetween: 39
                     }
+                },
+                on: {
+                    breakpoint: function() {
+                        const isMobile = window.innerWidth <= 768;
+                        const index = getRecommendedIndex(activeArea);
+                        if (isMobile && index !== -1) this.slideTo(index, 0); else this.slideTo(0, 0);
+                    }
                 }
             });
+            const isMobile = window.innerWidth <= 768;
+            const startIndex = getRecommendedIndex(activeArea);
+            if (isMobile && startIndex !== -1) seasonSwiper.slideTo(startIndex, 0);
             tabs.forEach((tab => {
                 tab.addEventListener("click", (function() {
                     tabs.forEach((t => t.classList.remove("active")));
                     this.classList.add("active");
-                    const area = this.dataset.area;
-                    slides.forEach((slide => {
-                        slide.style.display = slide.dataset.area === area ? "" : "none";
-                    }));
+                    activeArea = this.dataset.area;
+                    filterSlides(activeArea);
                     seasonSwiper.update();
-                    seasonSwiper.slideTo(0);
+                    const isMobile = window.innerWidth <= 768;
+                    const index = getRecommendedIndex(activeArea);
+                    if (isMobile && index !== -1) seasonSwiper.slideTo(index, 0); else seasonSwiper.slideTo(0, 0);
                 }));
             }));
         }));
