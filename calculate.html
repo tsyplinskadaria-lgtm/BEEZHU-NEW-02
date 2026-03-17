@@ -8,15 +8,9 @@
 	<link rel="icon" type="image.webp" sizes="16x16" href="img/main/bee - yellow.webp">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<!-- <link
-    href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap&_v=20260311212736"
-    rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap&_v=20260311212736"
-    rel="stylesheet"> -->
-
-	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700;800;900&display=swap&_v=20260311212736" rel="stylesheet">
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css?_v=20260311212736">
-	<link rel="stylesheet" href="./css/style.min.css?_v=20260311212736">
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700;800;900&display=swap&_v=20260317074528" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css?_v=20260317074528">
+	<link rel="stylesheet" href="./css/style.min.css?_v=20260317074528">
 	<title>Calculate | BEEЖУ</title>
 </head>
 
@@ -115,7 +109,7 @@
 							</div>
 						</div>
 
-						<button class="order-btn" aria-label="Замовити від 1990 грн">Замовити від 1990 грн</button>
+						<a href="#comprehensive" class="order-btn" aria-label="Замовити від 1990 грн">Замовити від 1990 грн</a>
 
 					</div>
 
@@ -144,7 +138,1963 @@
 
 		<div class="wrapper-container">
 			<div class="calculate">
+				<div class="menu-overlay2"></div>
 
+				<div class="calculate__container">
+					<div class="calculate__wrapper">
+
+						<!-- Модальне вікно з "Ваше замовлення" -->
+
+						<div class="your-order-modal">
+							<div class="your-order-modal__blocks your-order-modal-btn">
+								<div class="your-order-modal__text">
+									<img src="img/svg-new/home.svg" draggable="false" alt="">
+									<p>Ваше замовлення</p>
+								</div>
+
+								<span class="full-price">3 500 грн</span>
+							</div>
+
+							<div class="modal-order">
+								<div class="order-summary">
+									<div class="order-summary_blocks">
+
+										<h3 class="order-summary__title">
+											Ваше замовлення
+										</h3>
+
+										<div class="modal-close">
+											<img src="img/svg-new/close-circle.svg" draggable="false" alt="">
+										</div>
+
+										<!-- СЮДИ JS БУДЕ ТІЛЬКИ ПІДСТАВЛЯТИ ДАНІ -->
+										<div class="order-summary__list">
+
+											<!-- Тип прибирання -->
+											<div class="order-summary__item" data-type="main">
+												<h4>Тип прибирання</h4>
+
+												<div class="order-summary-type__list">
+													<!-- JS буде вставляти сюди item-и -->
+												</div>
+											</div>
+
+											<!-- Базові послуги -->
+											<div class="order-summary__item" data-type="extras">
+												<h4>Базові послуги</h4>
+
+												<div class="order-summary-type__list">
+													<!-- JS -->
+												</div>
+											</div>
+
+										</div>
+
+										<!-- ФІНАЛ -->
+										<div class="order-summary__final-price">
+											<p class="target-cost">Орієнтовна вартість</p>
+
+											<span class="full-price">
+												<span class="full-price__value">0</span> грн
+											</span>
+
+											<p class="descript">
+												Фінальна вартість прибирання визначається після узгодження
+												деталей замовлення.
+											</p>
+										</div>
+
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!--  -->
+
+						<div class="stepper-wrap">
+							<p class="stepper__counter">Крок 1 з 3</p>
+
+							<div class="stepper">
+								<div class="stepper__block stepper__item--active">
+									<div class="stepper__item ">
+										<span class="stepper__dot"></span>
+										<span class="stepper__label">Послуги</span>
+									</div>
+
+									<div class="stepper__line"></div>
+								</div>
+
+								<div class="stepper__block">
+									<div class="stepper__item">
+										<span class="stepper__dot"></span>
+										<span class="stepper__label">Контакти та адреса</span>
+									</div>
+								</div>
+
+								<div class="stepper__block">
+
+									<div class="stepper__line"></div>
+
+									<div class="stepper__item">
+										<span class="stepper__dot"></span>
+										<span class="stepper__label">Підтвердження</span>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- Steps -->
+
+						<div class="order-checkout step-1">
+							<div class="order-checkout__blocks">
+
+								<!-- Одиночне прибирання -->
+
+								<div class="single-cleaning-tab">
+
+									<!-- Заголовок -->
+
+									<div class="section-head">
+										<h1>Оформлення замовлення</h1>
+										<p>Крок 1 - Оберіть послуги та параметри</p>
+									</div>
+
+									<!-- switcher -->
+
+									<div class="switcher sizes-block">
+										<div class="switcher__blocks">
+
+											<button class="switcher__button switcher__button--active" data-type="single">
+												Разове прибирання
+											</button>
+
+											<button class="switcher__button switcher-btn-defoult" data-type="subscription">
+												Абонемент
+											</button>
+										</div>
+									</div>
+
+									<div class="sizes">
+
+										<div class="single-cleaning__blocks">
+											<div class="packages-01">
+												<div class="packages single-cleaning-packages is-calc sizes-block">
+													<div class="packages__blocks">
+
+														<div class="packages__controls">
+
+															<h2>Оберіть площу помешкання</h2>
+
+															<div class="packages__tabs">
+																<button class="packages__tab" data-area="45">до 45
+																	м²</button>
+																<button class="packages__tab active" data-area="60">до
+																	60 м²</button>
+																<button class="packages__tab" data-area="75">до 75
+																	м²</button>
+																<button class="packages__tab" data-area="90">до 90
+																	м²</button>
+																<button class="packages__tab" data-area="90+">90+
+																	м²</button>
+															</div>
+														</div>
+
+														<div class="single-cleaning-packages__wrap">
+															<h2>Тип прибирання</h2>
+
+															<div class="single-cleaning-packages__list">
+																<!-- 60 -->
+
+																<a href="#!" class="packages-slide" data-area="60" type="services" data-name="Базове" data-price="2990">
+
+																	<div class="packages-slide__info">
+																		<div class="packages-slide__top">
+																			<h3>Базове</h3>
+																			<p>Комплексне прибирання усіх основних зон
+																				для
+																				повного оновлення чистоти</p>
+																		</div>
+
+																		<div class="packages-slide__list">
+																			<div class="packages-slide__item">
+																				<div class="packages-slide__row">
+																					<img src="img/svg-new/mage_checklist.svg" alt="" draggable="false">
+																					<span>17 включених робіт</span>
+																				</div>
+
+																				<button class="packages-see-more see-more" aria-label="Переглянути">Переглянути</button>
+																			</div>
+
+																			<div class="packages-slide__item">
+																				<div class="packages-slide__row">
+																					<img src="img/svg-new/user.svg" alt="" draggable="false">
+																					<span>1 клінер</span>
+																				</div>
+																			</div>
+
+																			<div class="packages-slide__item">
+																				<div class="packages-slide__row">
+																					<img src="img/svg-new/clock.svg" alt="" draggable="false">
+																					<span>Тривалість ~3 год</span>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</a>
+
+																<a href="#!" class="packages-slide" data-area="60" type="services" data-name="Глибоке" data-price="2990">
+																	<div class="packages-slide__info">
+																		<div class="packages-slide__top">
+																			<h3>Глибоке</h3>
+																			<p>Максимально ретельне прибирання з
+																				видаленням
+																				застарілих забрудненень і
+																				чисткою важкодоступних зон</p>
+																		</div>
+
+																		<div class="packages-slide__list">
+																			<div class="packages-slide__item">
+																				<div class="packages-slide__row">
+																					<img src="img/svg-new/mage_checklist.svg" alt="" draggable="false">
+																					<span>24 включених робіт</span>
+																				</div>
+
+																				<button class="packages-see-more see-more" aria-label="Переглянути">Переглянути</button>
+																			</div>
+
+																			<div class="packages-slide__item">
+																				<div class="packages-slide__row">
+																					<img src="img/svg-new/user.svg" alt="" draggable="false">
+																					<span>2-3 клінер</span>
+																				</div>
+																			</div>
+
+																			<div class="packages-slide__item">
+																				<div class="packages-slide__row">
+																					<img src="img/svg-new/clock.svg" alt="" draggable="false">
+																					<span>Тривалість ~5 год</span>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</a>
+
+																<a href="#!" class="packages-slide" data-area="60" type="services" data-name="Після ремонту" data-price="2990">
+
+																	<div class="packages-slide__info">
+																		<div class="packages-slide__top">
+																			<h3>Після ремонту</h3>
+																			<p>Прибирання ремонтних забруднень та
+																				підготовка
+																				приміщення до заселення</p>
+																		</div>
+
+																		<div class="packages-slide__list">
+																			<div class="packages-slide__item">
+																				<div class="packages-slide__row">
+																					<img src="img/svg-new/mage_checklist.svg" alt="" draggable="false">
+																					<span>35 включених робіт</span>
+																				</div>
+
+																				<button class="packages-see-more see-more" aria-label="Переглянути">Переглянути</button>
+																			</div>
+
+																			<div class="packages-slide__item">
+																				<div class="packages-slide__row">
+																					<img src="img/svg-new/user.svg" alt="" draggable="false">
+																					<span>2-3 клінер </span>
+																				</div>
+																			</div>
+
+																			<div class="packages-slide__item">
+																				<div class="packages-slide__row">
+																					<img src="img/svg-new/clock.svg" alt="" draggable="false">
+																					<span>Тривалість ~9 год</span>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</a>
+
+																<a href="#!" class="packages-slide" data-area="60" type="services" data-name="Базове1" data-price="2991">
+
+																	<div class="packages-slide__info">
+																		<div class="packages-slide__top">
+																			<h3>Базове1</h3>
+																			<p>Комплексне прибирання усіх основних зон
+																				для
+																				повного оновлення чистоти</p>
+																		</div>
+
+																		<div class="packages-slide__list">
+																			<div class="packages-slide__item">
+																				<div class="packages-slide__row">
+																					<img src="img/svg-new/mage_checklist.svg" alt="" draggable="false">
+																					<span>17 включених робіт</span>
+																				</div>
+
+																				<button class="packages-see-more see-more" aria-label="Переглянути">Переглянути</button>
+																			</div>
+
+																			<div class="packages-slide__item">
+																				<div class="packages-slide__row">
+																					<img src="img/svg-new/user.svg" alt="" draggable="false">
+																					<span>1 клінер</span>
+																				</div>
+																			</div>
+
+																			<div class="packages-slide__item">
+																				<div class="packages-slide__row">
+																					<img src="img/svg-new/clock.svg" alt="" draggable="false">
+																					<span>Тривалість ~3 год</span>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</a>
+
+																<!-- 45 -->
+
+																<a href="#!" class="packages-slide" data-area="45" type="services" data-name="Базове 45" data-price="2045">
+
+																	<div class="packages-slide__info">
+																		<div class="packages-slide__top">
+																			<h3>Базове 45</h3>
+																			<p>Комплексне прибирання усіх основних зон
+																				для
+																				повного оновлення чистоти</p>
+																		</div>
+
+																		<div class="packages-slide__list">
+																			<div class="packages-slide__item">
+																				<div class="packages-slide__row">
+																					<img src="img/svg-new/mage_checklist.svg" alt="" draggable="false">
+																					<span>17 включених робіт</span>
+																				</div>
+
+																				<button class="packages-see-more see-more" aria-label="Переглянути">Переглянути</button>
+																			</div>
+
+																			<div class="packages-slide__item">
+																				<div class="packages-slide__row">
+																					<img src="img/svg-new/user.svg" alt="" draggable="false">
+																					<span>1 клінер</span>
+																				</div>
+																			</div>
+
+																			<div class="packages-slide__item">
+																				<div class="packages-slide__row">
+																					<img src="img/svg-new/clock.svg" alt="" draggable="false">
+																					<span>Тривалість ~3 год</span>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</a>
+
+																<a href="#!" class="packages-slide" data-area="45" type="services" data-name="Після ремонту 45" data-price="2045">
+
+																	<div class="packages-slide__info">
+																		<div class="packages-slide__top">
+																			<h3>Після ремонту 45</h3>
+																			<p>Прибирання ремонтних забруднень та
+																				підготовка
+																				приміщення до заселення</p>
+																		</div>
+
+																		<div class="packages-slide__list">
+																			<div class="packages-slide__item">
+																				<div class="packages-slide__row">
+																					<img src="img/svg-new/mage_checklist.svg" alt="" draggable="false">
+																					<span>35 включених робіт</span>
+																				</div>
+
+																				<button class="packages-see-more see-more" aria-label="Переглянути">Переглянути</button>
+																			</div>
+
+																			<div class="packages-slide__item">
+																				<div class="packages-slide__row">
+																					<img src="img/svg-new/user.svg" alt="" draggable="false">
+																					<span>2-3 клінер </span>
+																				</div>
+																			</div>
+
+																			<div class="packages-slide__item">
+																				<div class="packages-slide__row">
+																					<img src="img/svg-new/clock.svg" alt="" draggable="false">
+																					<span>Тривалість ~9 год</span>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</a>
+
+																<!-- 75 -->
+
+																<a href="#!" class="packages-slide" data-area="75" type="services" data-name="Глибоке 75" data-price="2075">
+																	<div class="packages-slide__info">
+																		<div class="packages-slide__top">
+																			<h3>Глибоке 75</h3>
+																			<p>Максимально ретельне прибирання з
+																				видаленням
+																				застарілих забрудненень і
+																				чисткою важкодоступних зон</p>
+																		</div>
+
+																		<div class="packages-slide__list">
+																			<div class="packages-slide__item">
+																				<div class="packages-slide__row">
+																					<img src="img/svg-new/mage_checklist.svg" alt="" draggable="false">
+																					<span>24 включених робіт</span>
+																				</div>
+
+																				<button class="packages-see-more see-more" aria-label="Переглянути">Переглянути</button>
+																			</div>
+
+																			<div class="packages-slide__item">
+																				<div class="packages-slide__row">
+																					<img src="img/svg-new/user.svg" alt="" draggable="false">
+																					<span>2-3 клінер</span>
+																				</div>
+																			</div>
+
+																			<div class="packages-slide__item">
+																				<div class="packages-slide__row">
+																					<img src="img/svg-new/clock.svg" alt="" draggable="false">
+																					<span>Тривалість ~5 год</span>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</a>
+
+																<a href="#!" class="packages-slide" data-area="75" type="services" data-name="Після ремонту 75" data-price="2075">
+
+																	<div class="packages-slide__info">
+																		<div class="packages-slide__top">
+																			<h3>Після ремонту 75</h3>
+																			<p>Прибирання ремонтних забруднень та
+																				підготовка
+																				приміщення до заселення</p>
+																		</div>
+
+																		<div class="packages-slide__list">
+																			<div class="packages-slide__item">
+																				<div class="packages-slide__row">
+																					<img src="img/svg-new/mage_checklist.svg" alt="" draggable="false">
+																					<span>35 включених робіт</span>
+																				</div>
+
+																				<button class="packages-see-more see-more" aria-label="Переглянути">Переглянути</button>
+																			</div>
+
+																			<div class="packages-slide__item">
+																				<div class="packages-slide__row">
+																					<img src="img/svg-new/user.svg" alt="" draggable="false">
+																					<span>2-3 клінер </span>
+																				</div>
+																			</div>
+
+																			<div class="packages-slide__item">
+																				<div class="packages-slide__row">
+																					<img src="img/svg-new/clock.svg" alt="" draggable="false">
+																					<span>Тривалість ~9 год</span>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</a>
+
+																<!-- 90+ -->
+
+																<a href="#!" class="packages-slide" data-area="90+" type="services" data-name="Базове 90+" data-price="2990">
+																	<div class="packages-slide__info">
+																		<div class="packages-slide__top">
+																			<h3>Базове 90+</h3>
+																			<p>Максимально ретельне прибирання з
+																				видаленням
+																				застарілих забрудненень і
+																				чисткою важкодоступних зон</p>
+																		</div>
+
+																		<div class="packages-slide__list">
+																			<div class="packages-slide__item">
+																				<div class="packages-slide__row">
+																					<img src="img/svg-new/mage_checklist.svg" alt="" draggable="false">
+																					<span>24 включених робіт</span>
+																				</div>
+
+																				<button class="packages-see-more see-more" aria-label="Переглянути">Переглянути</button>
+																			</div>
+
+																			<div class="packages-slide__item">
+																				<div class="packages-slide__row">
+																					<img src="img/svg-new/user.svg" alt="" draggable="false">
+																					<span>2-3 клінер</span>
+																				</div>
+																			</div>
+
+																			<div class="packages-slide__item">
+																				<div class="packages-slide__row">
+																					<img src="img/svg-new/clock.svg" alt="" draggable="false">
+																					<span>Тривалість ~5 год</span>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</a>
+
+																<div class="modal-overlay" id="modalOverlay">
+																	<div class="packages-modal">
+																		<div class="packages-modal__top">
+																			<img src="img/svg-new/modal-logo.svg" draggable="false" alt="">
+																			<h3>Експерс прибирання</h3>
+																		</div>
+
+																		<div class="packages-modal__contents">
+
+																			<div class="popular-questions">
+																				<div class="popular-questions__item active">
+																					<button class="popular-questions__header">
+																						<span>Які послуги входять</span>
+
+																					</button>
+
+																					<div class="popular-questions__content ticket-slide__list">
+																						<div class="ticket-slide__item">
+																							<img src="img/services-img/check.webp" draggable="false" alt="">
+																							<p>Акуратно складаємо
+																								неприбраний
+																								одяг,
+																								речі, предмети</p>
+																						</div>
+
+																						<div class="ticket-slide__item">
+																							<img src="img/services-img/check.webp" draggable="false" alt="">
+																							<p>Знімаємо павутину,
+																								знепилюємо
+																								стінові
+																								елементи</p>
+																						</div>
+
+																						<div class="ticket-slide__item">
+																							<img src="img/services-img/check.webp" draggable="false" alt="">
+																							<p>Протираємо дзеркала,
+																								доступні
+																								поверхні меблів від пилу
+																								та
+																								бруду
+																							</p>
+																						</div>
+
+																						<div class="ticket-slide__item">
+																							<img src="img/services-img/check.webp" draggable="false" alt="">
+																							<p>Миємо відкриті поверхні
+																								до 2
+																								м,
+																								протираємо та
+																								впорядковуємо
+																								предмети</p>
+																						</div>
+
+																						<div class="ticket-slide__item">
+																							<img src="img/services-img/check.webp" draggable="false" alt="">
+																							<p>Протираємо підвіконня,
+																								теплові
+																								радіатори ззовні</p>
+																						</div>
+
+																						<div class="ticket-slide__item">
+																							<img src="img/services-img/check.webp" draggable="false" alt="">
+																							<p>Протираємо побутову
+																								техніку
+																								ззовні,
+																								розетки, вимикачі</p>
+																						</div>
+
+																						<div class="ticket-slide__item">
+																							<img src="img/services-img/check.webp" draggable="false" alt="">
+																							<p>Миємо та поліруємо
+																								меблеві
+																								фасади,
+																								скляні поверхні</p>
+																						</div>
+
+																						<div class="ticket-slide__item">
+																							<img src="img/services-img/check.webp" draggable="false" alt="">
+																							<p>Миємо міжкімнатні та
+																								вхідні
+																								двері,
+																								плінтуси</p>
+																						</div>
+
+																						<div class="ticket-slide__item">
+																							<img src="img/services-img/check.webp" draggable="false" alt="">
+																							<p>Миємо світильники,
+																								карнизи,
+																								кондиціонери, відкриті
+																								поверхні
+																								вище
+																								2 м</p>
+																						</div>
+
+																						<div class="ticket-slide__item">
+																							<img src="img/services-img/check.webp" draggable="false" alt="">
+																							<p>Чистимо теплові радіатори
+																								всередині
+																								парогенератором</p>
+																						</div>
+
+																						<div class="ticket-slide__item">
+																							<img src="img/services-img/check.webp" draggable="false" alt="">
+																							<p>Прибираємо площі за
+																								негабаритними
+																								та
+																								рухомими меблями</p>
+																						</div>
+
+																						<div class="ticket-slide__item">
+																							<img src="img/services-img/check.webp" draggable="false" alt="">
+																							<p>Миємо та дезінфікуємо
+																								сантехніку,
+																								змішувачі, стіну біля
+																								раковини
+																							</p>
+																						</div>
+
+																						<div class="ticket-slide__item">
+																							<img src="img/services-img/check.webp" draggable="false" alt="">
+																							<p>Миємо стіни у ванній до
+																								половини
+																								висоти</p>
+																						</div>
+
+
+																						<div class="ticket-slide__item">
+																							<img src="img/services-img/check.webp" draggable="false" alt="">
+																							<p>Знімаємо стійкий наліт та
+																								іржу з
+																								сантехніки, стін,
+																								підлоги,
+																								зливів, скла душу</p>
+																						</div>
+
+																						<div class="ticket-slide__item">
+																							<img src="img/services-img/check.webp" draggable="false" alt="">
+																							<p>Миємо стіни у ванній по
+																								всій
+																								висоті,
+																								чистимо вентиляційні
+																								решітки
+																							</p>
+																						</div>
+
+																						<div class="ticket-slide__item">
+																							<img src="img/services-img/check.webp" draggable="false" alt="">
+																							<p>Миємо та складаємо посуд,
+																								кухонний
+																								інвентар</p>
+																						</div>
+
+																						<div class="ticket-slide__item">
+																							<img src="img/services-img/check.webp" draggable="false" alt="">
+																							<p>Миємо та складаємо посуд,
+																								кухонний
+																								інвентар</p>
+																						</div>
+
+																						<div class="ticket-slide__item">
+																							<img src="img/services-img/check.webp" draggable="false" alt="">
+																							<p>Миємо та знежирюємо
+																								кухонну
+																								стільницю, раковину,
+																								плиту,
+																								стіл,
+																								стільці</p>
+																						</div>
+
+																						<div class="ticket-slide__item">
+																							<img src="img/services-img/check.webp" draggable="false" alt="">
+																							<p>Знежирюємо кухонний
+																								фартух,
+																								протираємо кухонні
+																								фасади
+																							</p>
+																						</div>
+
+																						<div class="ticket-slide__item">
+																							<img src="img/services-img/check.webp" draggable="false" alt="">
+																							<p>Знежирюємо кухонні
+																								фасади,
+																								кухню
+																								зверху, побутову техніку
+																								ззовні
+																							</p>
+																						</div>
+
+																						<div class="ticket-slide__item">
+																							<img src="img/services-img/check.webp" draggable="false" alt="">
+																							<p>Миємо та дезінфікуємо
+																								шафку
+																								смітника,
+																								смітник ззовні</p>
+																						</div>
+
+																						<div class="ticket-slide__item">
+																							<img src="img/services-img/check.webp" draggable="false" alt="">
+																							<p>Миємо підлогу</p>
+																						</div>
+
+																						<div class="ticket-slide__item">
+																							<img src="img/services-img/check.webp" draggable="false" alt="">
+																							<p>Збираємо та виносимо
+																								сміття
+																							</p>
+																						</div>
+																					</div>
+																				</div>
+																			</div>
+
+																			<button class="modal-close" id="modalClose" aria-label="Закрити">
+																				<svg class="icon">
+																					<use xlink:href="img/icons/icons.svg#arrow-right">
+																					</use>
+																				</svg>
+																				Назад
+																			</button>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+
+														<div class="services">
+
+															<div class="services__blocks">
+
+																<!-- Додаткові послуги -->
+
+																<div class="services__block more-services">
+																	<h2>Додаткові послуги</h2>
+
+																	<div class="more-services__wrapper">
+
+																		<div class="more-services__tabs">
+																			<button class="more-services-tab active" data-tab="zones" data-title="Окремі зони">Окремі
+																				зони</button>
+																			<button class="more-services-tab" data-tab="windows" data-title="Миття вікон">Миття
+																				вікон</button>
+																			<button class="more-services-tab" data-tab="furniture" data-title="Хімчистка меблів">Хімчистка
+																				меблів</button>
+																			<button class="more-services-tab" data-tab="carpets" data-title="Хімчистка килимів">Хімчистка
+																				килимів</button>
+																		</div>
+
+																		<div class="more-services__content">
+
+																			<!-- TAB 1 -->
+																			<div class="more-services-pane active" data-tab="zones">
+																				<div class="more-services__swiper2 swiper">
+																					<div class="swiper-wrapper">
+																						<a href="#!" class="more-services__slide swiper-slide" data-name="Вентиляційна решітка" data-price="100" data-tab="zones">
+																							<div class="more-services__icon">
+																								<img src="img/services-img/more-services-03.webp" draggable="false" alt="">
+																							</div>
+
+																							<div class="more-services__info">
+																								<h3>Вентиляційна решітка
+																								</h3>
+																								<span>100 грн/м2</span>
+																							</div>
+																						</a>
+
+																						<a href="#!" class="more-services__slide swiper-slide" data-name="Вентиляційна решітка 01" data-price="101" data-tab="zones">
+																							<div class="more-services__icon">
+																								<img src="img/services-img/more-services-03.webp" draggable="false" alt="">
+																							</div>
+
+																							<div class="more-services__info">
+																								<h3>Вентиляційна решітка
+																								</h3>
+																								<span>101 грн/м2</span>
+																							</div>
+																						</a>
+
+																						<a href="#!" class="more-services__slide swiper-slide" data-name="Вентиляційна решітка 02" data-price="102" data-tab="zones">
+																							<div class="more-services__icon">
+																								<img src="img/services-img/more-services-03.webp" draggable="false" alt="">
+																							</div>
+
+																							<div class="more-services__info">
+																								<h3>Вентиляційна решітка
+																								</h3>
+																								<span>102 грн/м2</span>
+																							</div>
+																						</a>
+
+																						<a href="#!" class="more-services__slide swiper-slide" data-name="Вентиляційна решітка 03" data-price="103" data-tab="zones">
+																							<div class="more-services__icon">
+																								<img src="img/services-img/more-services-03.webp" draggable="false" alt="">
+																							</div>
+
+																							<div class="more-services__info">
+																								<h3>Вентиляційна решітка
+																								</h3>
+																								<span>103 грн/м2</span>
+																							</div>
+																						</a>
+
+																						<a href="#!" class="more-services__slide swiper-slide" data-name="Вентиляційна решітка 04" data-price="104" data-tab="zones">
+																							<div class="more-services__icon">
+																								<img src="img/services-img/more-services-03.webp" draggable="false" alt="">
+																							</div>
+
+																							<div class="more-services__info">
+																								<h3>Вентиляційна решітка
+																								</h3>
+																								<span>104 грн/м2</span>
+																							</div>
+																						</a>
+
+																						<a href="#!" class="more-services__slide swiper-slide" data-name="Вентиляційна решітка 05" data-price="105" data-tab="zones">
+																							<div class="more-services__icon">
+																								<img src="img/services-img/more-services-03.webp" draggable="false" alt="">
+																							</div>
+
+																							<div class="more-services__info">
+																								<h3>Вентиляційна решітка
+																								</h3>
+																								<span>105 грн/м2</span>
+																							</div>
+																						</a>
+
+																						<a href="#!" class="more-services__slide swiper-slide" data-name="Вентиляційна решітка 06" data-price="106" data-tab="zones">
+																							<div class="more-services__icon">
+																								<img src="img/services-img/more-services-03.webp" draggable="false" alt="">
+																							</div>
+
+																							<div class="more-services__info">
+																								<h3>Вентиляційна решітка
+																								</h3>
+																								<span>106 грн/м2</span>
+																							</div>
+																						</a>
+
+																					</div>
+																				</div>
+
+
+																				<div class="more-services__buttons">
+																					<button class="more-services__arrow more-services__arrow--prev2" aria-label="Попередній відгук">
+																						<svg class="icon">
+																							<use xlink:href="img/icons/icons.svg#arrow">
+																							</use>
+																						</svg>
+																					</button>
+
+																					<button class="more-services__arrow more-services__arrow--next2" aria-label="Наступний відгук">
+																						<svg class="icon">
+																							<use xlink:href="img/icons/icons.svg#arrow">
+																							</use>
+																						</svg>
+																					</button>
+																				</div>
+
+																				<div class="more-services__pagination2">
+																				</div>
+																			</div>
+
+																			<!-- TAB 2 -->
+
+																			<div class="more-services-pane" data-tab="windows">
+																				<div class="more-services__swiper2 swiper">
+																					<div class="swiper-wrapper">
+																						<a href="#!" class="more-services__slide swiper-slide" data-name="Сезонне миття " data-price="100" data-tab="windows">
+																							<div class="more-services__icon">
+																								<img src="img/services-img/window-01.webp" draggable="false" alt="">
+																							</div>
+
+																							<div class="more-services__info">
+																								<h3>Сезонне миття </h3>
+																								<span>100 грн/м2</span>
+																							</div>
+																						</a>
+
+																						<a href="#!" class="more-services__slide swiper-slide" data-name="Після ремонту" data-price="250" data-tab="windows">
+																							<div class="more-services__icon">
+																								<img src="img/services-img/window-02.webp" draggable="false" alt="">
+																							</div>
+
+																							<div class="more-services__info">
+																								<h3>Після ремонту</h3>
+																								<span>250 грн/м2</span>
+																							</div>
+																						</a>
+
+
+																					</div>
+																				</div>
+
+																				<div class="more-services__buttons">
+																					<button class="more-services__arrow more-services__arrow--prev2" aria-label="Попередній відгук">
+																						<svg class="icon">
+																							<use xlink:href="img/icons/icons.svg#arrow">
+																							</use>
+																						</svg>
+																					</button>
+
+																					<button class="more-services__arrow more-services__arrow--next2" aria-label="Наступний відгук">
+																						<svg class="icon">
+																							<use xlink:href="img/icons/icons.svg#arrow">
+																							</use>
+																						</svg>
+																					</button>
+																				</div>
+
+																				<div class="more-services__pagination">
+																				</div>
+																			</div>
+
+																			<!-- TAB 3 -->
+
+																			<div class="more-services-pane" data-tab="furniture">
+																				<div class="more-services__swiper2 swiper">
+																					<div class="swiper-wrapper">
+																						<a href="#!" class="more-services__slide swiper-slide" data-name="3-місний" data-price="1350" data-tab="furniture">
+																							<div class="more-services__icon">
+																								<img src="img/services-img/furniture-01.webp" draggable="false" alt="">
+																							</div>
+
+																							<div class="more-services__info">
+																								<h3>3-місний</h3>
+																								<span>1 350 грн</span>
+																							</div>
+																						</a>
+
+																						<a href="#!" class="more-services__slide swiper-slide" data-name="4-місний кутовий" data-price="2100" data-tab="furniture">
+																							<div class="more-services__icon">
+																								<img src="img/services-img/furniture-02.webp" draggable="false" alt="">
+																							</div>
+
+																							<div class="more-services__info">
+																								<h3>4-місний кутовий
+																								</h3>
+																								<span>2 100 грн</span>
+																							</div>
+																						</a>
+
+																						<a href="#!" class="more-services__slide swiper-slide" data-name="Матрац 2-спальний" data-price="100" data-tab="furniture">
+																							<div class="more-services__icon">
+																								<img src="img/services-img/furniture-03.webp" draggable="false" alt="">
+																							</div>
+
+																							<div class="more-services__info">
+																								<h3>Матрац 2-спальний
+																								</h3>
+																								<span>100 грн/м2</span>
+																							</div>
+																						</a>
+
+																						<a href="#!" class="more-services__slide swiper-slide" data-name="Матрац 1-спальний" data-price="100" data-tab="furniture">
+																							<div class="more-services__icon">
+																								<img src="img/services-img/furniture-04.webp" draggable="false" alt="">
+																							</div>
+
+																							<div class="more-services__info">
+																								<h3>Матрац 1-спальний
+																								</h3>
+																								<span>100 грн/м2</span>
+																							</div>
+																						</a>
+
+																						<a href="#!" class="more-services__slide swiper-slide" data-name="Крісло" data-price="100" data-tab="furniture">
+																							<div class="more-services__icon">
+																								<img src="img/services-img/furniture-05.webp" draggable="false" alt="">
+																							</div>
+
+																							<div class="more-services__info">
+																								<h3>Крісло</h3>
+																								<span>100 грн/м2</span>
+																							</div>
+																						</a>
+
+																						<a href="#!" class="more-services__slide swiper-slide" data-name="Стілець" data-price="100" data-tab="furniture">
+																							<div class="more-services__icon">
+																								<img src="img/services-img/furniture-06.webp" draggable="false" alt="">
+																							</div>
+
+																							<div class="more-services__info">
+																								<h3>Стілець</h3>
+																								<span>100 грн/м2</span>
+																							</div>
+																						</a>
+
+																						<a href="#!" class="more-services__slide swiper-slide" data-name="Банкетка" data-price="100" data-tab="furniture">
+																							<div class="more-services__icon">
+																								<img src="img/services-img/furniture-07.webp" draggable="false" alt="">
+																							</div>
+
+																							<div class="more-services__info">
+																								<h3>Банкетка</h3>
+																								<span>100 грн/м2</span>
+																							</div>
+																						</a>
+
+																						<a href="#!" class="more-services__slide swiper-slide" data-name="Подушки" data-price="120" data-tab="furniture">
+																							<div class="more-services__icon">
+																								<img src="img/services-img/furniture-08.webp" draggable="false" alt="">
+																							</div>
+
+																							<div class="more-services__info">
+																								<h3>Подушки</h3>
+																								<span>120 грн</span>
+																							</div>
+																						</a>
+																					</div>
+																				</div>
+
+																				<div class="more-services__buttons">
+																					<button class="more-services__arrow more-services__arrow--prev2" aria-label="Попередній відгук">
+																						<svg class="icon">
+																							<use xlink:href="img/icons/icons.svg#arrow">
+																							</use>
+																						</svg>
+																					</button>
+
+																					<button class="more-services__arrow more-services__arrow--next2" aria-label="Наступний відгук">
+																						<svg class="icon">
+																							<use xlink:href="img/icons/icons.svg#arrow">
+																							</use>
+																						</svg>
+																					</button>
+																				</div>
+
+																				<div class="more-services__pagination">
+																				</div>
+																			</div>
+
+																			<!-- TAB 4 -->
+
+																			<div class="more-services-pane" data-tab="carpets">
+																				<div class="more-services__swiper2 swiper">
+																					<div class="swiper-wrapper">
+																						<a href="#!" class="more-services__slide swiper-slide" data-name="Ковролін" data-price="180" data-tab="carpets">
+																							<div class="more-services__icon">
+																								<img src="img/services-img/carpet-01.webp" draggable="false" alt="">
+																							</div>
+
+																							<div class="more-services__info">
+																								<h3>Ковролін</h3>
+																								<span>180 грн/м2</span>
+																							</div>
+																						</a>
+
+																						<a href="#!" class="more-services__slide swiper-slide" data-name="Килим" data-price="100" data-tab="carpets">
+																							<div class="more-services__icon">
+																								<img src="img/services-img/carpet-02.webp" draggable="false" alt="">
+																							</div>
+
+																							<div class="more-services__info">
+																								<h3>Килим</h3>
+																								<span>100 грн/м2</span>
+																							</div>
+																						</a>
+
+																					</div>
+																				</div>
+
+																				<div class="more-services__buttons">
+																					<button class="more-services__arrow more-services__arrow--prev2" aria-label="Попередній відгук">
+																						<svg class="icon">
+																							<use xlink:href="img/icons/icons.svg#arrow">
+																							</use>
+																						</svg>
+																					</button>
+
+																					<button class="more-services__arrow more-services__arrow--next2" aria-label="Наступний відгук">
+																						<svg class="icon">
+																							<use xlink:href="img/icons/icons.svg#arrow">
+																							</use>
+																						</svg>
+																					</button>
+																				</div>
+
+																				<div class="more-services__pagination">
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+
+																</div>
+															</div>
+
+														</div>
+
+													</div>
+
+													<!--  -->
+
+													<div class="order-checkout-btns">
+														<a href="./index.html" class="order-checkout-home">
+															<img src="img/svg-new/home.svg" draggable="false" alt="">
+															На головну
+														</a>
+
+														<a href="#!" class="order-checkout-next">
+															Далі
+														</a>
+													</div>
+												</div>
+											</div>
+										</div>
+
+										<div class="order-summary">
+											<div class="order-summary_blocks">
+
+												<h3 class="order-summary__title">
+													Ваше замовлення
+												</h3>
+
+												<!-- СЮДИ JS БУДЕ ТІЛЬКИ ПІДСТАВЛЯТИ ДАНІ -->
+												<div class="order-summary__list">
+
+													<!-- Тип прибирання -->
+													<div class="order-summary__item" data-type="main">
+														<h4>Тип прибирання</h4>
+
+														<div class="order-summary-type__list">
+
+														</div>
+													</div>
+
+													<!-- Базові послуги -->
+													<div class="order-summary__item" data-type="extras">
+														<h4>Базові послуги</h4>
+
+														<div class="order-summary-type__list">
+
+														</div>
+													</div>
+
+												</div>
+
+												<!-- ФІНАЛ -->
+												<div class="order-summary__final-price">
+													<p class="target-cost">Орієнтовна вартість</p>
+
+													<span class="full-price">
+														<span class="full-price__value">0</span> грн
+													</span>
+
+													<p class="descript">
+														Фінальна вартість прибирання визначається після узгодження
+														деталей замовлення.
+													</p>
+												</div>
+
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<!-- Абонементи -->
+
+								<div class="season-ticket-tab">
+									<!-- Заголовок -->
+
+									<div class="section-head">
+										<h1>Оформлення замовлення</h1>
+										<p>Крок 1 - Оберіть абонемент</p>
+									</div>
+
+									<!-- switcher -->
+
+									<div class="switcher sizes-block">
+										<div class="switcher__blocks">
+
+											<button class="switcher__button switcher__button--active" data-type="single">
+												Разове прибирання
+											</button>
+
+											<button class="switcher__button switcher-btn-defoult" data-type="subscription">
+												Абонемент
+											</button>
+										</div>
+									</div>
+
+									<!--  -->
+									<div class="sizes">
+										<div class="season-ticket-tab__blocks sizes-block">
+
+											<div class="season-ticket packages-02 subscription">
+
+												<div class="packages single-cleaning-packages">
+
+													<div class="packages__blocks">
+
+														<!-- Площа та послуги -->
+
+														<div class="packages__controls">
+															<h2>Оберіть площу помешкання</h2>
+															<div class="packages__tabs">
+																<button class="packages__tab" data-area="45">до 45
+																	м²</button>
+																<button class="packages__tab active" data-area="60">до
+																	60 м²</button>
+																<button class="packages__tab" data-area="75">до 75
+																	м²</button>
+																<button class="packages__tab" data-area="90">до 90
+																	м²</button>
+																<button class="packages__tab" data-area="90+">90+
+																	м²</button>
+															</div>
+														</div>
+
+
+														<div class="single-cleaning-packages__wrap">
+															<h2>Тип прибирання</h2>
+
+															<div class="single-cleaning-packages__list">
+																<!-- 60 -->
+
+																<a href="#!" class="ticket-slide ticket-slide-ordinary" data-title="Стандарт" data-area="60" type="season" data-price="6600" data-bonus-limit="1">
+																	<div class="ticket-slide-wrap">
+																		<div class="ticket-slide__top">
+																			<h3>Стандарт</h3>
+																			<span class="price">6 600 грн</span>
+																		</div>
+
+																		<div class="ticket-slide__contents">
+																			<h4>В пакет входить </h4>
+																			<div class="ticket-slide__list">
+																				<div class="ticket-slide__item">
+																					<img src="img/services-img/check.webp" draggable="false" alt="">
+																					<p>Генеральне прибирання - 1 шт
+																					</p>
+																				</div>
+
+																				<div class="ticket-slide__item">
+																					<img src="img/services-img/check.webp" draggable="false" alt="">
+																					<p>Підтримуюче прибирання - 3 шт
+																					</p>
+																				</div>
+																			</div>
+																		</div>
+
+																		<div class="bonus-service__wrapper">
+																			<div class="bonus-service">
+																				<div class="bonus-service__amount">
+																					<img src="img/services-img/orange-check.webp" draggable="false" alt="">
+																					<p>Бонусна послуга - 1 шт </p>
+																				</div>
+																			</div>
+																		</div>
+
+																	</div>
+																</a>
+
+																<a href="#!" class="ticket-slide ticket-slide-ordinary" type="season" data-title="Базовий" data-area="60" data-price="5160" data-bonus-limit="0">
+																	<div class="ticket-slide-wrap">
+																		<div class="ticket-slide__top">
+																			<h3>Базовий</h3>
+																			<span class="price">5 160 грн</span>
+																		</div>
+
+																		<div class="ticket-slide__contents">
+																			<h4>В пакет входить </h4>
+																			<div class="ticket-slide__list">
+																				<div class="ticket-slide__item">
+																					<img src="img/services-img/check.webp" draggable="false" alt="">
+																					<p>Генеральне прибирання - 1 шт
+																					</p>
+																				</div>
+
+																				<div class="ticket-slide__item">
+																					<img src="img/services-img/check.webp" draggable="false" alt="">
+																					<p>Підтримуюче прибирання - 3 шт
+																					</p>
+																				</div>
+																			</div>
+																		</div>
+
+																		<div class="bonus-service__wrapper">
+																			<div class="bonus-service">
+																				<div class="bonus-service__amount">
+																					<img src="img/services-img/check.webp" draggable="false" alt="">
+																					<p>Без бонусних послуг</p>
+																				</div>
+																			</div>
+																		</div>
+
+																	</div>
+																</a>
+
+																<a href="#!" class="ticket-slide ticket-slide-ordinary" type="season" data-title="Преміум" data-area="60" data-price="7445" data-bonus-limit="2">
+																	<div class="ticket-slide-wrap">
+																		<div class="ticket-slide__top">
+																			<h3>Преміум</h3>
+																			<span class="price">7 445 грн</span>
+																		</div>
+
+																		<div class="ticket-slide__contents">
+																			<h4>В пакет входить </h4>
+																			<div class="ticket-slide__list">
+																				<div class="ticket-slide__item">
+																					<img src="img/services-img/check.webp" draggable="false" alt="">
+																					<p>Генеральне прибирання - 2 шт
+																					</p>
+																				</div>
+
+																				<div class="ticket-slide__item">
+																					<img src="img/services-img/check.webp" draggable="false" alt="">
+																					<p>Підтримуюче прибирання - 2 шт
+																					</p>
+																				</div>
+																			</div>
+																		</div>
+
+																		<div class="bonus-service__wrapper">
+																			<div class="bonus-service">
+																				<div class="bonus-service__amount">
+																					<img src="img/services-img/orange-check.webp" draggable="false" alt="">
+																					<p>Бонусна послуга - 2 шт</p>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+
+																</a>
+
+																<!-- 45 -->
+
+																<a href="#!" class="ticket-slide ticket-slide-ordinary" data-title="Стандарт 45" data-area="45" type="season" data-price="6600" data-bonus-limit="1">
+																	<div class="ticket-slide-wrap">
+																		<div class="ticket-slide__top">
+																			<h3>Стандарт</h3>
+																			<span class="price">6 600 грн</span>
+
+																		</div>
+
+																		<div class="ticket-slide__contents">
+																			<h4>В пакет входить </h4>
+																			<div class="ticket-slide__list">
+																				<div class="ticket-slide__item">
+																					<img src="img/services-img/check.webp" draggable="false" alt="">
+																					<p>Генеральне прибирання - 1 шт
+																					</p>
+																				</div>
+
+																				<div class="ticket-slide__item">
+																					<img src="img/services-img/check.webp" draggable="false" alt="">
+																					<p>Підтримуюче прибирання - 3 шт
+																					</p>
+																				</div>
+																			</div>
+																		</div>
+
+																		<div class="bonus-service__wrapper">
+																			<div class="bonus-service">
+																				<div class="bonus-service__amount">
+																					<img src="img/services-img/orange-check.webp" draggable="false" alt="">
+																					<p>Бонусна послуга - 1 шт
+																					</p>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</a>
+
+																<!-- 75 -->
+
+
+															</div>
+
+														</div>
+
+														<!-- Бонусні послуги -->
+
+														<div class="bonus-services">
+															<div class="bonus-services__top">
+																<h2>Бонусні послуги</h2>
+
+																<p>
+																	Входять у ваш пакет. Оберіть <span class="count">2</span> послуги
+																	без доплати.
+																</p>
+															</div>
+
+															<div class="bonus-services__list">
+																<label class="checkbox">
+																	<input type="checkbox" value="Мікрохвильова" class="checkbox__input">
+
+																	<span class="checkbox__box">
+																		<img src="img/svg/check.svg" alt="">
+																	</span>
+
+																	<span class="checkbox__text">
+																		Мікрохвильова
+																	</span>
+																</label>
+
+																<label class="checkbox">
+																	<input type="checkbox" value="Зливи" class="checkbox__input">
+
+																	<span class="checkbox__box">
+																		<img src="img/svg/check.svg" alt="">
+																	</span>
+
+																	<span class="checkbox__text">
+																		Зливи
+																	</span>
+																</label>
+
+																<label class="checkbox">
+																	<input type="checkbox" value="Смітник" class="checkbox__input">
+
+																	<span class="checkbox__box">
+																		<img src="img/svg/check.svg" alt="">
+																	</span>
+
+																	<span class="checkbox__text">
+																		Смітник
+																	</span>
+																</label>
+
+																<label class="checkbox">
+																	<input type="checkbox" value="Заміна постелі" class="checkbox__input">
+
+																	<span class="checkbox__box">
+																		<img src="img/svg/check.svg" alt="">
+																	</span>
+
+																	<span class="checkbox__text">
+																		Заміна постелі
+																	</span>
+																</label>
+
+																<label class="checkbox">
+																	<input type="checkbox" value="Холодильник" class="checkbox__input">
+
+																	<span class="checkbox__box">
+																		<img src="img/svg/check.svg" alt="">
+																	</span>
+
+																	<span class="checkbox__text">
+																		Холодильник
+																	</span>
+																</label>
+
+
+																<label class="checkbox">
+																	<input type="checkbox" value="Морозилка" class="checkbox__input">
+
+																	<span class="checkbox__box">
+																		<img src="img/svg/check.svg" alt="">
+																	</span>
+
+																	<span class="checkbox__text">
+																		Морозилка
+																	</span>
+																</label>
+
+
+																<label class="checkbox">
+																	<input type="checkbox" value="Чайник" class="checkbox__input">
+
+																	<span class="checkbox__box">
+																		<img src="img/svg/check.svg" alt="">
+																	</span>
+
+																	<span class="checkbox__text">
+																		Чайник
+																	</span>
+																</label>
+
+
+																<label class="checkbox">
+																	<input type="checkbox" value="Решітка душу" class="checkbox__input">
+
+																	<span class="checkbox__box">
+																		<img src="img/svg/check.svg" alt="">
+																	</span>
+
+																	<span class="checkbox__text">
+																		Решітка душу
+																	</span>
+																</label>
+
+
+																<label class="checkbox">
+																	<input type="checkbox" value="Шафка смітника" class="checkbox__input">
+
+																	<span class="checkbox__box">
+																		<img src="img/svg/check.svg" alt="">
+																	</span>
+
+																	<span class="checkbox__text">
+																		Шафка смітника
+																	</span>
+																</label>
+
+
+																<label class="checkbox">
+																	<input type="checkbox" value="Лоток улюбленця" class="checkbox__input">
+
+																	<span class="checkbox__box">
+																		<img src="img/svg/check.svg" alt="">
+																	</span>
+
+																	<span class="checkbox__text">
+																		Лоток улюбленця
+																	</span>
+																</label>
+
+
+															</div>
+
+															<div class="bonus-services__count">
+																Оберіть ще 1 послугу
+															</div>
+														</div>
+													</div>
+
+												</div>
+
+											</div>
+
+											<div class="order-checkout-btns">
+												<a href="./index.html" class="order-checkout-home">
+													<img src="img/svg-new/home.svg" draggable="false" alt="">
+													На головну
+												</a>
+
+												<a href="#!" class="order-checkout-next">
+													Далі
+												</a>
+											</div>
+
+										</div>
+
+										<div class="order-summary">
+											<div class="order-summary_blocks">
+
+												<h3 class="order-summary__title">
+													Ваше замовлення
+												</h3>
+
+												<!-- СЮДИ JS БУДЕ ВСТАВЛЯТИ ДАНІ -->
+
+												<div class="order-summary__list">
+
+													<!-- Тип прибирання -->
+													<div class="order-summary__item" data-type="main">
+														<h4>Пакет абонементу</h4>
+
+														<div class="order-summary-type__list"></div>
+													</div>
+
+													<!-- Додаткові послуги -->
+													<div class="order-summary__item" data-type="extras">
+														<h4>Бонусні послуги</h4>
+
+														<div class="order-summary-type__list"></div>
+													</div>
+
+												</div>
+
+												<!-- ФІНАЛЬНА ЦІНА -->
+												<div class="order-summary__final-price">
+													<p class="target-cost">Орієнтовна вартість</p>
+
+													<span class="full-price">
+														<span class="full-price__value">0</span> грн
+													</span>
+
+													<p class="descript">
+														Фінальна вартість прибирання визначається після узгодження
+														деталей замовлення.
+													</p>
+												</div>
+
+											</div>
+										</div>
+									</div>
+
+								</div>
+
+							</div>
+						</div>
+
+						<!-- Контактні дані -->
+
+						<div class="contact-details step-2">
+							<div class="contact-details__blocks">
+								<!-- Заголовок -->
+
+								<div class="section-head">
+									<h1>Контактні дані</h1>
+									<p>Крок 2 - Вкажіть ваші контактні дані</p>
+								</div>
+
+								<div class="sizes">
+									<div class="sizes-block">
+										<form class="contact-form">
+
+											<div class="contact-form__blocks">
+												<div class="contact-form__block">
+													<div class="contact-form-select">
+														<div class="contact-form-select__selected">
+															<p class="place">Місто прибирання:</p>
+
+															<span class="custom-select__text">Львів</span>
+
+															<span class="custom-select__arrow">Змінити</span>
+														</div>
+
+														<div class="contact-form-select__wrap">
+															<div class="contact-form-select__dropdown">
+																<div class="contact-form-select2__option active" data-value="lviv">Львів
+																</div>
+																<div class="contact-form-select2__option" data-value="Краків">
+																	Краків</div>
+															</div>
+														</div>
+													</div>
+
+													<!--  -->
+
+													<div class="contact-form__inputs">
+														<div class="contact-form__input">
+															<label for="name">Ім'я та прізвище <span>*</span></label>
+															<input id="name" name="name" type="text" placeholder="Введіть ваше ім'я" required>
+
+															<div class="input-error">
+																<img src="img/svg-new/close-input.svg" draggable="false" alt="">
+																Це поле обов'язкове
+															</div>
+														</div>
+
+														<div class="contact-form__input">
+															<label for="phone">Телефон <span>*</span></label>
+															<input id="phone" name="phone" type="tel" placeholder="+380" required>
+
+															<div class="input-error">
+																<img src="img/svg-new/close-input.svg" draggable="false" alt="">
+																Введіть коректний номер телефону
+															</div>
+														</div>
+
+														<div class="method-com">
+															<div class="contact-form__input">
+																<label>Спосіб зв'язку</label>
+
+																<div class="method-com__list">
+																	<div class="method-com__item">
+																		Дзвінок
+																	</div>
+
+																	<div class="method-com__item">
+																		Telegram
+																	</div>
+
+																	<div class="method-com__item">
+																		Viber
+																	</div>
+																</div>
+															</div>
+														</div>
+
+														<div class="contact-form__input">
+															<label for="comment">Коментар</label>
+															<textarea id="comment" name="comment" placeholder="Додайте коментар до замовлення (опціонально)" autocomplete="off"></textarea>
+														</div>
+
+														<div class="note">
+															<p><span>Примітка:</span> Ми зв'яжемося з вами за вказаним
+																номером телефону для підтвердження деталей замовлення.
+															</p>
+														</div>
+													</div>
+												</div>
+
+												<div class="contact-form__block2">
+													<h2>Адреса</h2>
+
+													<div class="contact-form__inputs">
+														<div class="contact-form__input">
+															<label for="street">Вулиця <span>*</span></label>
+															<input id="street" name="street" type="text" placeholder="Введіть назву вулиці" autocomplete="street-address" required>
+
+															<div class="input-error">
+																<img src="img/svg-new/close-input.svg" draggable="false" alt="">
+																Це поле обов'язкове
+															</div>
+														</div>
+
+														<div class="contact-form__list">
+
+															<div class="contact-form__input">
+																<label for="house">Будинок <span>*</span></label>
+																<input id="house" name="house" type="text" placeholder="№" inputmode="numeric" required>
+																<div class="input-error">
+																	<img src="img/svg-new/close-input.svg" draggable="false" alt="">
+																	Це поле обов'язкове
+																</div>
+															</div>
+
+															<div class="contact-form__input">
+																<label for="apartment">Квартира</label>
+																<input id="apartment" name="apartment" type="text" placeholder="№" inputmode="numeric">
+															</div>
+
+															<div class="contact-form__input">
+																<label for="floor">Поверх</label>
+																<input id="floor" name="floor" type="text" placeholder="№" inputmode="numeric">
+															</div>
+
+														</div>
+													</div>
+												</div>
+
+												<div class="contact-form__block2">
+													<h2>Дата</h2>
+
+													<div class="contact-form__inputs">
+														<div class="contact-form__input">
+															<label for="street">Оберіть бажану дату
+																<span>*</span></label>
+
+															<div class="contact-form__input-calendar">
+																<img src="img/svg-new/calendar-search.svg" class="calendar" draggable="false" alt="">
+
+																<input id="data" name="data" type="data" placeholder="Оберіть бажану дату" required>
+
+
+																<div class="calendar-box">
+
+																	<div class="calendar-box__header">
+																		<button type="button" class="calendar-prev">
+																			<img src="img/svg-new/calendar-arrow.svg" draggable="false" alt="">
+																		</button>
+
+																		<div class="calendar-title"></div>
+
+																		<button type="button" class="calendar-next">
+																			<img src="img/svg-new/calendar-arrow.svg" draggable="false" alt="">
+																		</button>
+																	</div>
+
+																	<div class="calendar-weekdays">
+																		<div>Mo</div>
+																		<div>Tu</div>
+																		<div>We</div>
+																		<div>Th</div>
+																		<div>Fr</div>
+																		<div>Sa</div>
+																		<div>Su</div>
+																	</div>
+
+																	<div class="calendar-days"></div>
+
+																</div>
+															</div>
+
+															<div class="input-error">
+																<img src="img/svg-new/close-input.svg" draggable="false" alt="">
+																Це поле обов'язкове
+															</div>
+														</div>
+
+														<div class="note-info">
+															<p>
+																<span>Інформація:</span> Точний час прибуття буде
+																узгоджено менеджером.
+															</p>
+														</div>
+													</div>
+												</div>
+											</div>
+
+											<div class="order-checkout-btns">
+												<a href="./index.html" class="order-checkout-prev">
+													Назад
+												</a>
+
+												<a href="#!" class="order-checkout-next">
+													Далі
+												</a>
+											</div>
+										</form>
+									</div>
+
+									<div class="order-summary">
+										<div class="order-summary_blocks">
+
+											<h3 class="order-summary__title">
+												Ваше замовлення
+											</h3>
+
+											<!-- СЮДИ JS БУДЕ ТІЛЬКИ ПІДСТАВЛЯТИ ДАНІ -->
+											<div class="order-summary__list">
+
+												<!-- Тип прибирання -->
+												<div class="order-summary__item" data-type="main">
+													<h4>Тип прибирання</h4>
+
+													<div class="order-summary-type__list">
+														<!-- JS буде вставляти сюди item-и -->
+													</div>
+												</div>
+
+												<!-- Базові послуги -->
+												<div class="order-summary__item" data-type="extras">
+													<h4>Базові послуги</h4>
+
+													<div class="order-summary-type__list">
+														<!-- JS -->
+													</div>
+												</div>
+
+											</div>
+
+											<!-- ФІНАЛ -->
+											<div class="order-summary__final-price">
+												<p class="target-cost">Орієнтовна вартість</p>
+
+												<span class="full-price">
+													<span class="full-price__value">0</span> грн
+												</span>
+
+												<p class="descript">
+													Фінальна вартість прибирання визначається після узгодження
+													деталей замовлення.
+												</p>
+											</div>
+
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- 3 -->
+
+						<div class="contact-details step-3">
+							<div class="contact-details__blocks">
+								<!-- Заголовок -->
+
+								<div class="section-head">
+									<h1>Підтвердження замовлення</h1>
+									<p>Крок 3 - Перевірте дані перед відправкою заявки</p>
+								</div>
+
+								<div class="sizes-block">
+									<div class="order-summary">
+										<div class="order-summary_blocks">
+
+											<!-- СЮДИ JS БУДЕ ТІЛЬКИ ПІДСТАВЛЯТИ ДАНІ -->
+											<div class="order-summary__list">
+
+												<!-- Тип прибирання -->
+												<div class="order-summary__item" data-type="main">
+													<h4>Тип прибирання</h4>
+
+													<div class="order-summary-type__list">
+														<!-- JS буде вставляти сюди item-и -->
+													</div>
+												</div>
+
+												<!-- Базові послуги -->
+												<div class="order-summary__item" data-type="extras">
+													<h4>Базові послуги</h4>
+
+													<div class="order-summary-type__list">
+														<!-- JS -->
+													</div>
+												</div>
+
+											</div>
+
+											<div class="form-info">
+												<div class="form-info__item">
+													<span class="name">Адреса:</span>
+
+													<div class="form-info__detail">
+														<p class="form-info-address"></p>
+													</div>
+												</div>
+
+												<div class="form-info__item">
+													<span class="name">Дата:</span>
+
+													<div class="form-info__detail">
+														<p class="form-info-data"></p>
+													</div>
+												</div>
+
+												<div class="form-info__item">
+													<span class="name">Контакт:</span>
+
+													<div class="form-info__detail">
+														<p class="form-info-name"></p>
+														<p class="form-info-number"></p>
+													</div>
+												</div>
+											</div>
+
+											<!-- ФІНАЛ -->
+											<div class="order-summary__final-price">
+												<p class="target-cost">Орієнтовна вартість</p>
+
+												<span class="full-price">
+													<span class="full-price__value">0</span> грн
+												</span>
+
+												<p class="descript">
+													Фінальна вартість прибирання визначається після узгодження
+													деталей замовлення.
+												</p>
+											</div>
+
+											<div class="order-checkout-btns">
+												<a href="./index.html" class="order-checkout-prev order-checkout-prev-des">
+													Повернутися до редагування
+												</a>
+
+												<a href="#!" class="order-checkout-next">
+													Далі
+												</a>
+											</div>
+
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<!-- 4 -->
+
+						<div class="contact-details step-4">
+							<div class="thanks">
+								<div class="thanks__top">
+									<img src="img/main/bee - yellow.webp" draggable="false" alt="">
+
+									<h2>Замовлення прийнято!</h2>
+
+									<p>
+										Дякуємо за замовлення! Наш менеджер зв'яжеться з вами протягом 15 хвилин для
+										підтвердження всіх деталей.
+									</p>
+								</div>
+
+								<a href="./index.html" class="thanks-btn" aria-label="Повернутись на головну">
+									<img src="img/svg-new/home.svg" draggable="false" alt="">
+									Повернутись на головну
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 
@@ -261,9 +2211,9 @@
 		</footer>
 	</div>
 
-	<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js?_v=20260311212736"></script>
-	<script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js?_v=20260311212736"></script>
-	<script src="js/app.min.js?_v=20260311212736"></script>
+	<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js?_v=20260317074528"></script>
+	<script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js?_v=20260317074528"></script>
+	<script src="js/app.min.js?_v=20260317074528"></script>
 
 	<div class="menu-overlay"></div>
 </body>
