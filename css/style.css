@@ -4750,13 +4750,18 @@ label.checkbox.disabled * {
   font-weight: 400!important
 }
 .thanks {
+  margin: 0 16px;
+  margin-top: 150px;
+  margin-bottom: 120px
+}
+.thanks__blocks {
+  margin: 0 auto;
+  padding: 40px 16px;
   display: flex;
   justify-content: center;
   align-items: center;
   max-width: 425px;
   width: 100%;
-  margin: 0 auto;
-  padding: 40px 16px;
   box-shadow: 0 1px 2.9px 0 rgba(0,0,0,.1490196078);
   background: #f0f2f3;
   border-radius: 14px;
@@ -6065,6 +6070,9 @@ label.checkbox.disabled * {
   .contact-form__block2 {
     padding: 24px 16px
   }
+  .thanks__blocks {
+    padding: 24px 16px
+  }
 }
 @media (max-width:576px)and (max-width:370px) {
   .footer .social-wrapper {
@@ -6313,5 +6321,8 @@ label.checkbox.disabled * {
   .main__blocks h1 {
     line-height: 40px;
     font-size: 32px
+  }
+  .thanks__blocks {
+    padding: 24px 10px
   }
 }

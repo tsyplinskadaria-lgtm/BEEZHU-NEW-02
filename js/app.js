@@ -966,10 +966,23 @@
                     packagesSwiper.update();
                     packagesSwiper.slideTo(0);
                     toggleNavigation();
+                    scrollToSelected();
                 }
             }
+            function scrollToSelected() {
+                if (!packagesSwiper) return;
+                const selectedBtn = block.querySelector(".order-btn.is-selected");
+                if (!selectedBtn) return;
+                const slide = selectedBtn.closest(".packages-slide");
+                if (!slide) return;
+                const index = [ ...slides ].indexOf(slide);
+                if (index !== -1) packagesSwiper.slideTo(index, 600);
+            }
             const activeTab = block.querySelector(".packages__tab.active");
-            if (activeTab) filterSlides(activeTab.dataset.area);
+            if (activeTab) {
+                filterSlides(activeTab.dataset.area);
+                scrollToSelected();
+            }
             tabs.forEach((tab => {
                 tab.addEventListener("click", (function() {
                     tabs.forEach((t => t.classList.remove("active")));
@@ -990,6 +1003,7 @@
                 packagesSwiper.on("breakpoint", toggleNavigation);
             }
             window.addEventListener("resize", toggleNavigation);
+            window.addEventListener("orderUpdated", scrollToSelected);
         }));
     }));
     document.addEventListener("DOMContentLoaded", (() => {
@@ -1300,7 +1314,8 @@
         const stepperItems = document.querySelectorAll(".stepper__item");
         const stepperLines = document.querySelectorAll(".stepper__line");
         const counter = document.querySelector(".stepper__counter");
-        const modalOrder = document.querySelector(".your-order-modal");
+        const thanksBlock = document.querySelector(".thanks");
+        const calculateWrapper = document.querySelector(".calculate__wrapper");
         const STEP_KEY = "currentStep";
         const STORAGE_KEY = "cleaningOrder";
         let currentStep = Number(localStorage.getItem(STEP_KEY)) || 0;
@@ -1336,10 +1351,6 @@
             updateNextBtnState();
             updateStepperCounter();
             if (currentStep === 2) fillStep3Summary();
-            if (currentStep === 3) {
-                if (modalOrder) modalOrder.style.display = "none";
-                clearOrder();
-            }
         }
         function updateNextBtnState() {
             const order = getOrder();
@@ -1349,7 +1360,6 @@
                     const stepFields = steps[currentStep].querySelectorAll("[required]");
                     disabled = !Array.from(stepFields).every((f => f.classList.contains("success")));
                 }
-                if (currentStep === 2) disabled = false;
                 btn.disabled = disabled;
                 btn.classList.toggle("btn-disabled", disabled);
             }));
@@ -1367,6 +1377,12 @@
                         e.preventDefault();
                         return;
                     }
+                }
+                if (currentStep === 2) {
+                    if (calculateWrapper) calculateWrapper.style.display = "none";
+                    if (thanksBlock) thanksBlock.style.display = "flex";
+                    clearOrder();
+                    return;
                 }
                 if (currentStep < steps.length - 1) showStep(currentStep + 1);
             }));
@@ -1446,50 +1462,6 @@
             field.classList.add("success");
             if (errorBlock) errorBlock.style.display = "none";
         }
-        const dateInput = document.querySelector("#data");
-        if (dateInput) {
-            const errorBlock = dateInput.parentElement.querySelector(".input-error");
-            const order = getOrder();
-            if (order.data) dateInput.value = order.data;
-            const calendarDays = document.querySelectorAll(".calendar-days div");
-            calendarDays.forEach((day => {
-                day.addEventListener("click", (() => {
-                    const selectedDate = day.dataset.date;
-                    if (!selectedDate) return;
-                    dateInput.value = selectedDate;
-                    const order = getOrder();
-                    order.data = selectedDate;
-                    saveOrder(order);
-                    validateDate(dateInput, errorBlock);
-                    updateNextBtnState();
-                }));
-            }));
-            dateInput.addEventListener("input", (() => {
-                let value = dateInput.value.replace(/\D/g, "").slice(0, 8);
-                if (value.length > 4) value = value.replace(/^(\d{2})(\d{2})(\d{0,4})/, "$1.$2.$3"); else if (value.length > 2) value = value.replace(/^(\d{2})(\d{0,2})/, "$1.$2");
-                dateInput.value = value;
-                const order = getOrder();
-                order.data = dateInput.value;
-                saveOrder(order);
-                validateDate(dateInput, errorBlock);
-                updateNextBtnState();
-            }));
-        }
-        const contactMethods = document.querySelectorAll(".method-com__item");
-        const order = getOrder();
-        if (order.contact_method) contactMethods.forEach((item => {
-            if (item.textContent.trim() === order.contact_method) item.classList.add("active");
-        }));
-        contactMethods.forEach((item => {
-            item.addEventListener("click", (() => {
-                if (item.classList.contains("active")) return;
-                contactMethods.forEach((i => i.classList.remove("active")));
-                item.classList.add("active");
-                const order = getOrder();
-                order.contact_method = item.textContent.trim();
-                saveOrder(order);
-            }));
-        }));
         function fillStep3Summary() {
             const order = getOrder();
             if (!order) return;
@@ -1513,6 +1485,7 @@
             if (!day || !month) return dateStr;
             return `${day} ${months[month - 1]}`;
         }
+        if (thanksBlock) thanksBlock.style.display = "none";
         if (currentStep >= steps.length) currentStep = 0;
         showStep(currentStep);
     }));
@@ -1611,8 +1584,16 @@
                 }));
                 if (seasonSwiper) {
                     seasonSwiper.update();
-                    seasonSwiper.slideTo(0);
+                    scrollToSelected();
                 }
+            };
+            const scrollToSelected = () => {
+                if (!seasonSwiper) return;
+                let targetSlide = block.querySelector(".btn-save.is-selected")?.closest(".ticket-slide");
+                if (!targetSlide) targetSlide = block.querySelector(".ticket-slide-recommended");
+                if (!targetSlide) return;
+                const index = [ ...slides ].indexOf(targetSlide);
+                if (index !== -1) seasonSwiper.slideTo(index, 600);
             };
             const activeTab = block.querySelector(".packages__tab.active");
             if (activeTab) filterSlides(activeTab.dataset.area);
@@ -1624,6 +1605,7 @@
                     filterSlides(area);
                 }));
             }));
+            window.addEventListener("orderUpdated", scrollToSelected);
         }));
     }));
     document.addEventListener("DOMContentLoaded", (() => {
