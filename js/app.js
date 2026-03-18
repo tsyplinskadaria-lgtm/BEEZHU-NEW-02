@@ -1333,6 +1333,12 @@
             localStorage.removeItem(STORAGE_KEY);
             localStorage.removeItem(STEP_KEY);
         }
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        }
         function updateStepperCounter() {
             if (counter) counter.textContent = `Крок ${currentStep + 1} з ${steps.length}`;
         }
@@ -1351,6 +1357,7 @@
             updateNextBtnState();
             updateStepperCounter();
             if (currentStep === 2) fillStep3Summary();
+            scrollToTop();
         }
         function updateNextBtnState() {
             const order = getOrder();
@@ -1358,7 +1365,9 @@
                 let disabled = false;
                 if (currentStep === 0) disabled = !(order.service && (order.type === "one-time" || order.type === "subscription")); else if (currentStep === 1) {
                     const stepFields = steps[currentStep].querySelectorAll("[required]");
-                    disabled = !Array.from(stepFields).every((f => f.classList.contains("success")));
+                    const fieldsValid = Array.from(stepFields).every((f => f.classList.contains("success")));
+                    const contactValid = !!document.querySelector(".method-com__item.active");
+                    disabled = !(fieldsValid && contactValid);
                 }
                 btn.disabled = disabled;
                 btn.classList.toggle("btn-disabled", disabled);
@@ -1373,7 +1382,9 @@
                 }
                 if (currentStep === 1) {
                     const stepFields = steps[currentStep].querySelectorAll("[required]");
-                    if (!Array.from(stepFields).every((f => f.classList.contains("success")))) {
+                    const fieldsValid = Array.from(stepFields).every((f => f.classList.contains("success")));
+                    const contactValid = !!document.querySelector(".method-com__item.active");
+                    if (!(fieldsValid && contactValid)) {
                         e.preventDefault();
                         return;
                     }
@@ -1382,6 +1393,7 @@
                     if (calculateWrapper) calculateWrapper.style.display = "none";
                     if (thanksBlock) thanksBlock.style.display = "flex";
                     clearOrder();
+                    scrollToTop();
                     return;
                 }
                 if (currentStep < steps.length - 1) showStep(currentStep + 1);
@@ -1429,18 +1441,32 @@
                 }));
             }));
         }
+        const contactMethods = document.querySelectorAll(".method-com__item");
+        const order = getOrder();
+        if (order.contact_method) contactMethods.forEach((item => {
+            if (item.textContent.trim() === order.contact_method) item.classList.add("active");
+        }));
+        contactMethods.forEach((item => {
+            item.addEventListener("click", (() => {
+                contactMethods.forEach((i => i.classList.remove("active")));
+                item.classList.add("active");
+                const order = getOrder();
+                order.contact_method = item.textContent.trim();
+                saveOrder(order);
+                updateNextBtnState();
+            }));
+        }));
         function validateField(field, touched = true, errorBlock = null) {
             const value = field.value.trim();
             if (!errorBlock) errorBlock = field.parentElement.querySelector(".input-error");
             let isValid = false;
-            if (field.id === "name") isValid = /^[А-Яа-яЇїІіЄєҐґA-Za-z\s'-]{5,}$/.test(value); else if (field.id === "phone") isValid = /^(\+38|38|0)\d{9}$/.test(value); else if (field.id === "street" || field.id === "house") isValid = value !== ""; else if (field.id === "data") isValid = validateDate(field, errorBlock); else isValid = true;
+            if (field.id === "name") isValid = /^[А-Яа-яЇїІіЄєҐґA-Za-z\s'-]{5,}$/.test(value); else if (field.id === "phone") isValid = /^(\+38|38|0)\d{9}$/.test(value); else if (field.id === "street" || field.id === "house") isValid = value !== ""; else if (field.id === "data") isValid = validateDate(field); else isValid = true;
             if (isValid) showSuccess(field, errorBlock); else if (touched && field.hasAttribute("required")) showError(field, errorBlock); else {
-                field.classList.remove("error");
-                field.classList.remove("success");
+                field.classList.remove("error", "success");
                 if (errorBlock) errorBlock.style.display = "none";
             }
         }
-        function validateDate(field, errorBlock = null) {
+        function validateDate(field) {
             const value = field.value.trim();
             const regex = /^\d{2}\.\d{2}\.\d{4}$/;
             if (!regex.test(value)) return false;
@@ -1448,9 +1474,7 @@
             const inputDate = new Date(year, month - 1, day);
             const today = new Date;
             today.setHours(0, 0, 0, 0);
-            if (inputDate < today) return false;
-            if (errorBlock) showSuccess(field, errorBlock);
-            return true;
+            return inputDate >= today;
         }
         function showError(field, errorBlock) {
             field.classList.remove("success");
@@ -1466,11 +1490,7 @@
             const order = getOrder();
             if (!order) return;
             const addressEl = document.querySelector(".form-info-address");
-            if (addressEl) {
-                const street = order.street || "";
-                const house = order.house || "";
-                addressEl.textContent = `${street} ${house}`.trim();
-            }
+            if (addressEl) addressEl.textContent = `${order.street || ""} ${order.house || ""}`.trim();
             const dateEl = document.querySelector(".form-info-data");
             if (dateEl) dateEl.textContent = formatDateToText(order.data);
             const nameEl = document.querySelector(".form-info-name");
