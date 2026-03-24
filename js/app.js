@@ -772,7 +772,8 @@
                 let total = 0;
                 if (order?.service) {
                     total += Number(order.service.price || 0);
-                    if (mainList) mainList.innerHTML = `\n        <div class="order-summary-type__item">\n          <div class="order-summary-type__item-top">\n            <p class="order-summary__name">${order.service.name || ""}</p>\n            <span>(${order.service.area || ""})</span>\n          </div>\n          <p class="order-summary__price">+${Number(order.service.price || 0).toLocaleString("uk-UA")}</p>\n        </div>\n      `;
+                    const areaText = order.service.area ? `(до ${order.service.area} м²)` : "";
+                    if (mainList) mainList.innerHTML = `\n            <div class="order-summary-type__item">\n              <div class="order-summary-type__item-top">\n                <p class="order-summary__name">${order.service.name || ""}</p>\n                <span>${areaText}</span>\n              </div>\n              <p class="order-summary__price">+${Number(order.service.price || 0).toLocaleString("uk-UA")}</p>\n            </div>\n          `;
                 } else {
                     priceBlock.textContent = "0";
                     return;
@@ -785,12 +786,11 @@
                         const tabName = tabButton?.dataset.title || tab;
                         const tabBlock = document.createElement("div");
                         tabBlock.className = "order-summary__item";
-                        tabBlock.setAttribute("data-type", "extras");
-                        tabBlock.innerHTML = `\n    <h4>${tabName}</h4>\n    <div class="order-summary-type__list"></div>\n  `;
+                        tabBlock.innerHTML = `\n            <h4>${tabName}</h4>\n            <div class="order-summary-type__list"></div>\n          `;
                         const listContainer = tabBlock.querySelector(".order-summary-type__list");
                         tabItems.forEach((item => {
                             total += Number(item.price || 0);
-                            listContainer.innerHTML += `\n            <div class="order-summary-type__item">\n              <p class="order-summary__name">${item.name}</p>\n              <p class="order-summary__price">+${Number(item.price || 0).toLocaleString("uk-UA")}</p>\n            </div>\n          `;
+                            listContainer.innerHTML += `\n              <div class="order-summary-type__item">\n                <p class="order-summary__name">${item.name}</p>\n                <p class="order-summary__price">+${Number(item.price || 0).toLocaleString("uk-UA")}</p>\n              </div>\n            `;
                         }));
                         extrasContainer.appendChild(tabBlock);
                     }));
@@ -798,11 +798,10 @@
                 if (order.type === "subscription" && Array.isArray(order.service?.bonuses) && order.service.bonuses.length && extrasContainer) {
                     const bonusBlock = document.createElement("div");
                     bonusBlock.className = "order-summary__item";
-                    bonusBlock.setAttribute("data-type", "extras");
-                    bonusBlock.innerHTML = `\n        <h4>Бонуси</h4>\n        <div class="order-summary-type__list"></div>\n      `;
+                    bonusBlock.innerHTML = `\n          <h4>Бонуси</h4>\n          <div class="order-summary-type__list"></div>\n        `;
                     const listContainer = bonusBlock.querySelector(".order-summary-type__list");
                     order.service.bonuses.forEach((bonus => {
-                        listContainer.innerHTML += `\n          <div class="order-summary-type__item">\n            <p class="order-summary__name">${bonus}</p>\n          </div>\n        `;
+                        listContainer.innerHTML += `\n            <div class="order-summary-type__item">\n              <p class="order-summary__name">${bonus}</p>\n            </div>\n          `;
                     }));
                     extrasContainer.appendChild(bonusBlock);
                 }
